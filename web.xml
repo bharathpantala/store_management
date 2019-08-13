@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>sid</servlet-name>
+        <jsp-file>/welcome.jsp</jsp-file>
+        <init-param>
+            <param-name>dname</param-name>
+            <param-value>sun.jdbc.odbc.JdbcOdbcDriver</param-value>
+        </init-param>
+    </servlet>
+   
+    <servlet-mapping>
+        <servlet-name>sid</servlet-name>
+        <url-pattern>/welcome</url-pattern>
+    </servlet-mapping> 
+    <servlet>
+        <servlet-name>ControllerServlet</servlet-name>
+        <servlet-class>a.ControllerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ControllerServlet</servlet-name>
+        <url-pattern>/ControllerServlet</url-pattern>
+    </servlet-mapping>
+      <servlet>
+        <servlet-name>admin</servlet-name>
+        <jsp-file>admin/</jsp-file>
+       
+    </servlet>
+    
+    
+    <session-config>
+        <session-timeout>
+            3000
+        </session-timeout>
+    </session-config>
+</web-app>
